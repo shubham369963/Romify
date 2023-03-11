@@ -1,4 +1,6 @@
-const socket = io('http://localhost:3000')
+const PORT = 10000;
+const hostname = `http://localhost:${PORT}`
+const socket = io(hostname)
 const messageContainer = document.getElementById('message-container')
 const roomContainer = document.getElementById('room-container')
 const messageForm = document.getElementById('send-container')

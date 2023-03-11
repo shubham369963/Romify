@@ -4,7 +4,7 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const dotenv = require("dotenv")
 dotenv.config();
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 10000;
 
 app.set('views', './views')
 app.set('view engine', 'ejs')
