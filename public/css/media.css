@@ -1,0 +1,27 @@
+@media (max-width:426px) {
+    .heading h1 {
+        font-size: 70px;
+    }
+
+}
+
+@media (max-width:1025px) {
+    .heading {
+        height: 10%;
+    }
+
+    #room-container {
+        height: 40%;
+    }
+
+    .center form {
+
+        height: 50%;
+
+    }
+
+    button {
+        height: 70px;
+        width: 70px;
+    }
+}

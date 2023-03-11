@@ -1,0 +1,83 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 70%;
+  height: 70vh;
+  z-index: 100;
+  position: relative;
+  flex-direction: column;
+}
+
+#room-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  width: 100%;
+}
+
+.center form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60%;
+  flex-direction: column;
+}
+
+.dots,
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+// Text styling
+h1 {
+  text-align: center;
+  font-size: 9vw;
+  position: relative;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1;
+
+  // This is important, we need the h1 to be invisible.	
+  color: transparent;
+
+
+  &:focus {
+    outline: none;
+  }
+}
+
+h1::before,
+h1::after {
+  content: attr(data-heading);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// Clip path to slice the text.
+h1::before {
+  color: #5b41f2;
+  clip-path: polygon(0% 100%, 100% 100%, 100% 40%, 0 60%)
+}
+
+h1::after {
+  color: white;
+  clip-path: polygon(0 0, 100% 0%, 100% 36%, 0 56%);
+  animation: slide 5s infinite;
+}

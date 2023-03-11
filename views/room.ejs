@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Romify</title>
+    <script>
+      const roomName="<%= roomName %>"
+    </script>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/room.css">
+
+  </head>
+
+  <body>
+    <!-- <div id="message-container"></div>
+  <form id="send-container">
+    <input type="text" id="message-input">
+    <button type="submit" id="send-button">Send</button>
+  </form> -->
+
+    <div class="container">
+      <div class="header">
+        <div class="logo">Romify</div>
+        <div class="subtext">Connect to people</div>
+      </div>
+      <div class="contact-info">
+        <div class="avatar">
+          <img src="https://via.placeholder.com/75" alt="Avatar">
+        </div>
+        <div class="user-info">
+          <h2 id="userinfo"></h2>
+        </div>
+      </div>
+      <div class="chat-box">
+        <div id="message-container" class="message"></div> 
+      </div>
+      <div class="input-area">
+        <form id="send-container">
+        <input type="text" id="message-input">
+        <button type="submit" id="send-button"><i class="fas fa-paper-plane"></i></button>
+      </form>
+      </div>
+    </div>
+  </body>
+
+</html>

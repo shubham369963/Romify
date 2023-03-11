@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Romify</title>
+        <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+        <script defer src="script.js"></script>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/nav.css" />
+        <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="css/search.css">
+        <link rel="stylesheet" href="css/joinbtn.css">
+        <link rel="stylesheet" href="css/media.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="dots">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="center">
+                <div class="heading">
+                    <h1 contenteditable data-heading="Romify">Romify</h1>
+                    </div>
+                    <div id="room-container">
+                        <% Object.keys(rooms).forEach(room=> { %>
+                            <div class="box">
+                                <%= room %>
+                                <a href="/<%= room %>" class="custom-btn btn-2">Join</a>
+                            </div>
+                            
+                            
+                            <% }) %>
+                    </div>
+                    <form action="/room" method="POST" >
+                        <input type="text" id='search-bar' name="room" placeholder="Create New Room" required>
+                        <button type="submit" class="btn">
+                            <span>
+                              <b></b>
+                              <svg viewBox="-5.5 -5.5 71 71" id="circle">
+                                <circle cx="30" cy="30" r="30" stroke="white" stroke-width="11" fill="transparent"></circle>
+                              </svg>
+                            </span>
+                          </button>
+                    </form>
+            </div>
+        </div>
+        <script>
+            const btn = document.querySelector('.btn');
+const heading = document.querySelector('.heading');
+
+let active = false;
+
+const turnOn = () => {
+  btn.classList.add('active');
+  heading.classList.add('active');
+}
+
+const turnOff = () => {
+  btn.classList.remove('active');
+  heading.classList.remove('active');
+}
+
+const toggleAnimation = () => {
+  btn.classList.remove('animating');
+  active ? turnOn() : turnOff();
+};
+
+function clickHandler() {
+  active = !active;
+  btn.classList.add('animating');
+  
+  btn.addEventListener('animationend', toggleAnimation);
+}
+
+btn.addEventListener('click', clickHandler);
+
+
+
+/*btn.addEventListener('animationend', () => {
+  btn.classList.remove('animating');
+  if (active === true) {
+    btn.classList.add('active');
+    heading.classList.add('active');
+  } else {
+    btn.classList.remove('active');
+    heading.classList.remove('active');
+  }
+});
+
+
+btn.addEventListener('animationend', () => {
+  btn.classList.remove('animating');
+  active ? turnOn() : turnOff();
+});
+*/
+        </script>
+    </body>
+
+</html>
