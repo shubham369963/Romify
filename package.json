@@ -2,6 +2,7 @@
   "name": "current-project",
   "version": "1.0.0",
   "description": "",
+  "proxy": "http://localhost:10000",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
